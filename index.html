@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sheikh Fuzael Rahman</title>
+<meta name="description" content="Sheikh Fuzael Rahman is an industrial engineer working in human factors and ergonomics. Six years in industry, now a Doctor of Engineering student at Lamar University building tools that keep people safe and productive at work.">
+<meta property="og:title" content="Sheikh Fuzael Rahman | Industrial Engineer, Human Factors and Ergonomics">
+<meta property="og:description" content="Six years in industry. Now building tools that keep people safe and productive at work.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@87,500;87,600;87,700&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Layout idea: a plant-floor logbook. Steel ink on cool paper, one hi-vis amber rule marking what matters, mono labels for tenures and units. */
+  --paper: #f5f6f4;
+  --surface: #ffffff;
+  --ink: #16212b;
+  --muted: #56636e;
+  --line: #d9dee2;
+  --accent: #1d5f6b;
+  --accent-soft: #e3eef0;
+  --hivis: #e08a1e;
+  --font-display: "Archivo", "Arial Narrow", Arial, sans-serif;
+  --font-body: "Public Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --max: 1120px;
+  --radius: 6px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #10171d;
+    --surface: #172129;
+    --ink: #e7ecef;
+    --muted: #9eabb5;
+    --line: #2a3742;
+    --accent: #6fb7c2;
+    --accent-soft: #1b3036;
+    --hivis: #f0a443;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #10171d;
+  --surface: #172129;
+  --ink: #e7ecef;
+  --muted: #9eabb5;
+  --line: #2a3742;
+  --accent: #6fb7c2;
+  --accent-soft: #1b3036;
+  --hivis: #f0a443;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--hivis); outline-offset: 2px; border-radius: 2px; }
+h1, h2, h3, h4 { font-family: var(--font-display); font-stretch: 87%; line-height: 1.15; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+.mono { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.02em; }
+.skip { position: absolute; left: -999px; top: 8px; background: var(--ink); color: var(--paper); padding: 8px 12px; z-index: 100; }
+.skip:focus { left: 8px; }
+
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; }
+.brand { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.brand-mark { width: 10px; height: 22px; background: var(--hivis); border-radius: 2px; }
+.nav { display: flex; gap: 4px; align-items: center; }
+.nav a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 0.95rem; padding: 8px 12px; border-radius: var(--radius); }
+.nav a:hover, .nav a[aria-current="true"] { background: var(--accent-soft); color: var(--accent); }
+.nav .nav-cta { background: var(--ink); color: var(--paper); margin-left: 6px; }
+.nav .nav-cta:hover { background: var(--accent); color: #fff; }
+.menu-btn { display: none; background: none; border: 1px solid var(--line); color: var(--ink); border-radius: var(--radius); padding: 8px 12px; font: inherit; font-weight: 600; cursor: pointer; }
+@media (max-width: 860px) {
+  .menu-btn { display: inline-block; }
+  .nav { display: none; position: absolute; top: 64px; left: 0; right: 0; flex-direction: column; align-items: stretch; background: var(--paper); border-bottom: 1px solid var(--line); padding: 8px 16px 16px; }
+  .nav.open { display: flex; }
+  .nav .nav-cta { margin-left: 0; text-align: center; }
+}
+
+/* Hero */
+.hero { padding: 56px 0 40px; }
+.hero .wrap { display: grid; grid-template-columns: 1.35fr 1fr; gap: 48px; align-items: center; }
+.eyebrow { color: var(--muted); display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+.eyebrow::before { content: ""; width: 28px; height: 3px; background: var(--hivis); }
+.hero h1 { font-size: clamp(2.4rem, 5.2vw, 3.7rem); font-weight: 700; letter-spacing: -0.01em; }
+.hero .role { font-family: var(--font-display); font-size: clamp(1.15rem, 2.2vw, 1.45rem); font-weight: 600; color: var(--accent); margin-top: 10px; }
+.hero .tagline { font-size: 1.15rem; max-width: 34em; margin-top: 20px; color: var(--ink); }
+.hero .sub { color: var(--muted); max-width: 36em; margin-top: 12px; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: var(--radius); font-weight: 600; text-decoration: none; border: 1.5px solid var(--ink); color: var(--ink); background: transparent; font-size: 0.98rem; }
+.btn:hover { background: var(--accent-soft); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn.primary:hover { background: var(--ink); border-color: var(--ink); }
+:root[data-theme="dark"] .btn.primary, :root:not([data-theme="light"]) .btn.primary { color: #fff; }
+.portrait { position: relative; }
+.portrait img { border-radius: var(--radius); aspect-ratio: 4 / 5; height: auto; object-fit: cover; object-position: 50% 20%; width: 100%; max-width: 360px; margin-left: auto; box-shadow: 0 20px 40px -24px rgba(16, 23, 29, 0.45); }
+.portrait figcaption { color: var(--muted); text-align: right; margin-top: 10px; }
+@media (max-width: 860px) {
+  .hero { padding-top: 32px; }
+  .hero .wrap { grid-template-columns: 1fr; gap: 28px; }
+  .portrait { order: -1; }
+  .portrait img { max-width: 150px; margin: 0; aspect-ratio: 1 / 1; object-position: 50% 25%; }
+  .portrait figcaption { display: none; }
+  .portrait figcaption { text-align: left; }
+}
+
+/* Key numbers */
+.figures { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--surface); }
+.figures ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); }
+.figures li { padding: 22px 20px; border-left: 1px solid var(--line); }
+.figures li:first-child { border-left: 0; }
+.figures .num { font-family: var(--font-display); font-size: 2rem; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.figures .lbl { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
+@media (max-width: 860px) {
+  .figures ul { grid-template-columns: repeat(2, 1fr); }
+  .figures li { border-left: 0; border-top: 1px solid var(--line); }
+  .figures li:nth-child(-n+2) { border-top: 0; }
+  .figures li:nth-child(even) { border-left: 1px solid var(--line); }
+  .figures li:last-child { grid-column: 1 / -1; border-left: 0; }
+}
+
+/* Sections */
+section.block { padding: 72px 0; }
+section.block + section.block { border-top: 1px solid var(--line); }
+.section-head { display: grid; grid-template-columns: 220px 1fr; gap: 32px; margin-bottom: 36px; align-items: end; }
+.section-head .mono { color: var(--muted); }
+.section-head h2 { font-size: clamp(1.8rem, 3.4vw, 2.4rem); font-weight: 700; }
+.section-head p { color: var(--muted); max-width: 40em; margin-top: 8px; }
+.body-grid { display: grid; grid-template-columns: 220px 1fr; gap: 32px; }
+@media (max-width: 860px) {
+  section.block { padding: 52px 0; }
+  .section-head, .body-grid { grid-template-columns: 1fr; gap: 8px; }
+  .body-grid { gap: 20px; }
+}
+
+/* Highlights */
+.highlights { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.hl { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; text-decoration: none; color: var(--ink); display: flex; flex-direction: column; gap: 10px; transition: border-color 0.15s; }
+.hl:hover { border-color: var(--accent); }
+.hl h3 { font-size: 1.3rem; }
+.hl p { color: var(--muted); font-size: 0.97rem; }
+.hl .go { margin-top: auto; color: var(--accent); font-weight: 600; font-size: 0.95rem; }
+@media (max-width: 860px) { .highlights { grid-template-columns: 1fr; } }
+
+/* Publications */
+.pubs { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.pub { display: grid; grid-template-columns: 90px 1fr; gap: 20px; padding: 20px 0; border-top: 1px solid var(--line); }
+.pub:last-child { border-bottom: 1px solid var(--line); }
+.pub .yr { font-family: var(--font-mono); color: var(--muted); font-size: 0.9rem; padding-top: 2px; }
+.pub h3 { font-family: var(--font-body); font-size: 1.05rem; font-weight: 600; line-height: 1.4; }
+.pub h3 a { color: var(--ink); text-decoration: none; }
+.pub h3 a:hover { color: var(--accent); text-decoration: underline; }
+.pub .venue { color: var(--muted); font-size: 0.95rem; margin-top: 4px; }
+.pub .authors { font-size: 0.95rem; margin-top: 4px; }
+.status { display: inline-block; font-family: var(--font-mono); font-size: 0.72rem; padding: 2px 8px; border-radius: 99px; border: 1px solid var(--line); color: var(--muted); margin-left: 6px; vertical-align: 2px; }
+.status.ok { border-color: var(--accent); color: var(--accent); }
+@media (max-width: 600px) { .pub { grid-template-columns: 1fr; gap: 4px; } }
+.more-link { margin-top: 20px; display: inline-block; font-weight: 600; }
+
+/* Timeline */
+.timeline { list-style: none; margin: 0; padding: 0; position: relative; }
+.job { display: grid; grid-template-columns: 220px 1fr; gap: 32px; padding: 28px 0; border-top: 1px solid var(--line); }
+.job:last-child { border-bottom: 1px solid var(--line); }
+.job .when { font-family: var(--font-mono); font-size: 0.85rem; color: var(--muted); }
+.job .org { font-weight: 600; color: var(--ink); font-family: var(--font-body); font-size: 0.95rem; margin-top: 6px; }
+.job .loc { color: var(--muted); font-size: 0.9rem; }
+.job h3 { font-size: 1.3rem; }
+.job ul { margin: 12px 0 0; padding-left: 1.1em; max-width: 44em; }
+.job li { margin: 6px 0; }
+.job li::marker { color: var(--hivis); }
+.job.now h3::after { content: "Current"; font-family: var(--font-mono); font-size: 0.7rem; font-weight: 500; color: var(--accent); border: 1px solid var(--accent); border-radius: 99px; padding: 1px 8px; margin-left: 10px; vertical-align: 4px; }
+.group-label { font-family: var(--font-mono); font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin: 36px 0 4px; }
+.group-label:first-child { margin-top: 0; }
+@media (max-width: 860px) { .job { grid-template-columns: 1fr; gap: 6px; } }
+
+/* Projects */
+.feature { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; margin-bottom: 20px; }
+.feature-top { display: grid; grid-template-columns: 1.1fr 1fr; }
+.feature-text { padding: 32px; display: flex; flex-direction: column; gap: 12px; }
+.feature-text h3 { font-size: 1.7rem; }
+.feature-text .meta { color: var(--muted); }
+.feature-text .lead { font-size: 1.05rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.tag { font-family: var(--font-mono); font-size: 0.75rem; background: var(--accent-soft); color: var(--accent); padding: 3px 9px; border-radius: 4px; }
+.links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+.links .btn { padding: 9px 16px; font-size: 0.92rem; }
+.media { background: var(--ink); color: var(--paper); display: flex; align-items: center; justify-content: center; min-height: 280px; position: relative; padding: 24px; }
+.media .ph { text-align: center; max-width: 22em; }
+.media .ph strong { display: block; font-family: var(--font-display); font-size: 1.15rem; margin: 10px 0 4px; }
+.media .ph span { font-size: 0.9rem; opacity: 0.75; }
+.play { width: 56px; height: 56px; border-radius: 50%; border: 2px solid var(--hivis); display: inline-flex; align-items: center; justify-content: center; }
+.play::after { content: ""; border-left: 16px solid var(--hivis); border-top: 10px solid transparent; border-bottom: 10px solid transparent; margin-left: 4px; }
+.media iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.media.has-video { padding: 0; }
+.poster { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: var(--ink); }
+.poster img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.poster .play { position: relative; width: 72px; height: 72px; background: rgba(22, 33, 43, 0.82); border-color: var(--hivis); transition: transform 0.15s; }
+.poster:hover .play, .poster:focus-visible .play { transform: scale(1.08); }
+.case { border-top: 1px solid var(--line); }
+.case summary { cursor: pointer; padding: 16px 32px; font-weight: 600; color: var(--accent); list-style: none; display: flex; align-items: center; gap: 10px; }
+.case summary::-webkit-details-marker { display: none; }
+.case summary::before { content: "+"; font-family: var(--font-mono); font-size: 1.1rem; width: 1em; }
+.case[open] summary::before { content: "\2212"; }
+.case-body { padding: 0 32px 32px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px 40px; }
+.case-body h4 { font-size: 1.05rem; margin-bottom: 6px; }
+.case-body ul { margin: 0; padding-left: 1.1em; }
+.case-body li { margin: 4px 0; }
+.case-body .full { grid-column: 1 / -1; }
+.result-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.result { border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; }
+.result .num { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.result .lbl { font-size: 0.88rem; color: var(--muted); }
+.note { font-size: 0.88rem; color: var(--muted); font-style: italic; }
+@media (max-width: 860px) {
+  .feature-top { grid-template-columns: 1fr; }
+  .media { min-height: 220px; }
+  .feature-text { padding: 24px; }
+  .case summary { padding: 16px 24px; }
+  .case-body { padding: 0 24px 24px; grid-template-columns: 1fr; }
+  .result-row { grid-template-columns: 1fr; }
+}
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 8px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; display: flex; flex-direction: column; gap: 10px; }
+.card .kind { font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.card h3 { font-size: 1.15rem; }
+.card p { font-size: 0.95rem; color: var(--muted); }
+.card .links { margin-top: auto; padding-top: 6px; }
+.card .links a { font-weight: 600; font-size: 0.92rem; }
+@media (max-width: 960px) { .cards { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .cards { grid-template-columns: 1fr; } }
+.sub-head { font-family: var(--font-display); font-size: 1.3rem; margin: 40px 0 14px; }
+
+/* Research */
+.research-now { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--hivis); border-radius: var(--radius); padding: 28px; }
+.research-now h3 { font-size: 1.45rem; margin-bottom: 10px; }
+.research-now p + p { margin-top: 10px; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+.panel { border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; background: var(--surface); }
+.panel h3 { font-size: 1.1rem; margin-bottom: 8px; }
+.panel p { color: var(--muted); font-size: 0.97rem; }
+@media (max-width: 860px) { .two-col { grid-template-columns: 1fr; } }
+
+/* About */
+.story { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; counter-reset: s; }
+.story li { counter-increment: s; border-top: 3px solid var(--ink); padding-top: 14px; }
+.story li:last-child { border-top-color: var(--hivis); }
+.story li::before { content: "0" counter(s); font-family: var(--font-mono); color: var(--muted); font-size: 0.8rem; }
+.story h3 { font-size: 1.15rem; margin: 6px 0 8px; }
+.story p { font-size: 0.95rem; color: var(--muted); }
+@media (max-width: 960px) { .story { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .story { grid-template-columns: 1fr; } }
+.edu { list-style: none; margin: 0; padding: 0; }
+.edu li { display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; padding: 14px 0; border-top: 1px solid var(--line); }
+.edu li:last-child { border-bottom: 1px solid var(--line); }
+.edu strong { font-weight: 600; }
+.edu .where { color: var(--muted); font-size: 0.95rem; grid-column: 1; }
+.edu .when { font-family: var(--font-mono); font-size: 0.82rem; color: var(--muted); grid-row: 1; grid-column: 2; text-align: right; }
+.skills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px 32px; }
+.skills h4 { font-size: 1rem; margin-bottom: 6px; }
+.skills p { color: var(--muted); font-size: 0.95rem; }
+@media (max-width: 600px) { .skills { grid-template-columns: 1fr; } .edu li { grid-template-columns: 1fr; } .edu .when { grid-row: auto; grid-column: 1; text-align: left; } }
+.about-stack { display: grid; gap: 40px; }
+
+/* Contact */
+.contact { background: var(--ink); color: var(--paper); }
+.contact a { color: var(--paper); }
+.contact .section-head .mono, .contact .section-head p { color: color-mix(in srgb, var(--paper) 70%, var(--ink)); }
+.contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: color-mix(in srgb, var(--paper) 18%, var(--ink)); border: 1px solid color-mix(in srgb, var(--paper) 18%, var(--ink)); border-radius: var(--radius); overflow: hidden; }
+.contact-grid a, .contact-grid div { background: var(--ink); padding: 22px; text-decoration: none; display: flex; flex-direction: column; gap: 4px; }
+.contact-grid a:hover { background: color-mix(in srgb, var(--paper) 8%, var(--ink)); }
+.contact-grid .k { font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.7; }
+.contact-grid .v { font-weight: 600; word-break: break-word; }
+.copy-btn { align-self: flex-start; margin-top: 6px; background: transparent; border: 1px solid color-mix(in srgb, var(--paper) 40%, var(--ink)); color: var(--paper); border-radius: 4px; padding: 4px 10px; font: inherit; font-size: 0.85rem; cursor: pointer; }
+.copy-btn:hover { border-color: var(--hivis); }
+@media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
+footer { background: var(--ink); color: color-mix(in srgb, var(--paper) 65%, var(--ink)); border-top: 1px solid color-mix(in srgb, var(--paper) 15%, var(--ink)); padding: 22px 0; font-size: 0.88rem; }
+footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+footer a { color: inherit; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Sheikh Fuzael Rahman, back to top"><span class="brand-mark" aria-hidden="true"></span>Sheikh Fuzael Rahman</a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#research">Research</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HOME -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow mono">Beaumont, Texas · Open to industry roles</p>
+      <h1>Sheikh Fuzael Rahman</h1>
+      <p class="role">Industrial Engineer · Human Factors and Ergonomics</p>
+      <p class="tagline">I make industrial work safer and more productive by designing around the people who do it.</p>
+      <p class="sub">Six years on plant floors, shipyards and customer sites in Bangladesh. Now a Doctor of Engineering student at Lamar University, building wearable and AI tools that spot fatigue before it turns into injury or error.</p>
+      <div class="actions">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn" href="assets/Sheikh-Fuzael-Rahman-CV.pdf" target="_blank" rel="noopener">Download CV</a>
+      </div>
+    </div>
+    <figure class="portrait" style="margin:0">
+      <img src="assets/sheikh-fuzael-rahman.jpg" alt="Sheikh Fuzael Rahman on the Lamar University campus" width="720" height="945">
+      <figcaption class="mono">Lamar University, Beaumont</figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="figures" aria-label="Key figures">
+  <div class="wrap">
+    <ul>
+      <li><div class="num">6+</div><div class="lbl">years in industry</div></li>
+      <li><div class="num">$11M+</div><div class="lbl">equipment and gas portfolios managed</div></li>
+      <li><div class="num">110%</div><div class="lbl">of annual revenue target, best year</div></li>
+      <li><div class="num">4.00</div><div class="lbl">CGPA, MEng Industrial Engineering</div></li>
+      <li><div class="num">3</div><div class="lbl">featured publications</div></li>
+    </ul>
+  </div>
+</div>
+
+<section class="block" aria-labelledby="start-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">Start here</span>
+      <div><h2 id="start-h">Where to look first</h2></div>
+    </div>
+    <div class="highlights">
+      <a class="hl" href="#experience">
+        <span class="mono" style="color:var(--muted)">2016 to now</span>
+        <h3>Experience</h3>
+        <p>Engineering and technical sales roles at BanglaCAT, Energypac and Linde, then human factors research at Lamar.</p>
+        <span class="go">View timeline</span>
+      </a>
+      <a class="hl" href="#projects">
+        <span class="mono" style="color:var(--muted)">8 projects</span>
+        <h3>Projects</h3>
+        <p>An adaptive micro-break app, a UR10e robot digital twin, an AI 5S safety checker and more.</p>
+        <span class="go">View projects</span>
+      </a>
+      <a class="hl" href="#research">
+        <span class="mono" style="color:var(--muted)">Fatigue and workload</span>
+        <h3>Research</h3>
+        <p>AI-adaptive microbreak scheduling based on fatigue modelling, with published work in ergonomics.</p>
+        <span class="go">View research</span>
+      </a>
+    </div>
+
+    <h3 class="sub-head" id="featured-pubs">Featured publications</h3>
+    <ol class="pubs">
+      <li class="pub">
+        <span class="yr">2026</span>
+        <div>
+          <h3><a href="https://doi.org/10.1002/bse.71686" target="_blank" rel="noopener">Smart Industry and Ecological Sustainability: Industry 4.0 Technologies, Renewables, and the US Production Ecological Footprint</a></h3>
+          <p class="authors"><strong>Rahman, S. F.</strong>, Rohan, S. I., Rashed, M., and Vasa, L.</p>
+          <p class="venue">Business Strategy and the Environment, e71686 · doi.org/10.1002/bse.71686</p>
+        </div>
+      </li>
+      <li class="pub">
+        <span class="yr">2026</span>
+        <div>
+          <h3><a href="https://doi.org/10.54941/ahfe1007975" target="_blank" rel="noopener">Enhancing Learning Efficiency and Ergonomic Well-Being: A Comparative Study of Handwritten, AI-Assisted, and Digital Structured Note-Taking</a></h3>
+          <p class="venue">AHFE International Conference on Human Factors and Systems Interaction, Istanbul · Vol. 230, pp. 39 to 48</p>
+        </div>
+      </li>
+      <li class="pub">
+        <span class="yr">2025</span>
+        <div>
+          <h3><a href="https://doi.org/10.54941/ahfe1006472" target="_blank" rel="noopener">Influence of Computer Keyboard Slope and Wrist Support Height on Users' Discomfort</a></h3>
+          <p class="venue">AHFE International Conference on Physical Ergonomics and Human Factors, Orlando · Vol. 185, pp. 122 to 130</p>
+        </div>
+      </li>
+    </ol>
+    <a class="more-link" href="#publications">See all publications</a>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="block" id="experience" aria-labelledby="exp-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">01 · Experience</span>
+      <div>
+        <h2 id="exp-h">Experience</h2>
+        <p>From marine engines and construction machinery to industrial gases, and now human factors research.</p>
+      </div>
+    </div>
+
+    <p class="group-label">Lamar University</p>
+    <ol class="timeline">
+      <li class="job now">
+        <div><div class="when">Dec 2025 to present</div><div class="org">Human Factors and Ergonomics Laboratory</div><div class="loc">Lamar University, Beaumont, Texas</div></div>
+        <div>
+          <h3>Research Assistant</h3>
+          <ul>
+            <li>Researching AI-adaptive microbreak scheduling based on fatigue modelling</li>
+            <li>Building data-driven models to estimate fatigue and support personalised work and rest plans</li>
+            <li>Wrote two participant and data-processing guides for the lab's Garmin wearable study</li>
+          </ul>
+        </div>
+      </li>
+      <li class="job now">
+        <div><div class="when">May 2026 to present</div><div class="org">Math Shop</div><div class="loc">Lamar University, Beaumont, Texas</div></div>
+        <div>
+          <h3>Student Assistant, Mathematics Tutor</h3>
+          <ul>
+            <li>One-to-one and small-group tutoring in undergraduate mathematics, building problem-solving and independent learning</li>
+          </ul>
+        </div>
+      </li>
+    </ol>
+
+    <p class="group-label">Industry</p>
+    <ol class="timeline">
+      <li class="job">
+        <div><div class="when">Dec 2020 to May 2023</div><div class="org">Linde Bangladesh Limited</div><div class="loc">Narayanganj, Bangladesh</div></div>
+        <div>
+          <h3>Executive, Area Sales (Industrial Gases)</h3>
+          <ul>
+            <li>Managed $7M+ in industrial gas key accounts and reached 105% of annual revenue targets</li>
+            <li>Ran cryogenic liquid storage operation and safety training at customer sites</li>
+            <li>Cut product returns through Kaizen and 5S initiatives, improving quality and customer retention</li>
+            <li>Improved inventory management efficiency by 5.5%</li>
+            <li>Worked with the Quality team to reduce mixed gas defects</li>
+          </ul>
+        </div>
+      </li>
+      <li class="job">
+        <div><div class="when">May 2018 to Dec 2020</div><div class="org">Energypac Power Generation Limited</div><div class="loc">Dhaka, Bangladesh</div></div>
+        <div>
+          <h3>Senior Engineer, Construction Machinery and Material Handling (JCB)</h3>
+          <ul>
+            <li>Managed a $4M+ national equipment portfolio and delivered 110% of annual revenue targets</li>
+            <li>Led teams across technical service, warehouse operations and OEM coordination</li>
+            <li>Used demand forecasting, inventory optimisation and Lean practices to lower holding costs and raise equipment availability</li>
+            <li>Ran application and productivity studies for construction, manufacturing, cement and logistics customers</li>
+            <li>Led local equipment modifications to improve productivity in harsh operating conditions</li>
+          </ul>
+        </div>
+      </li>
+      <li class="job">
+        <div><div class="when">Apr 2017 to May 2018</div><div class="org">Bangla Trac Limited (BanglaCAT)</div><div class="loc">Dhaka, Bangladesh</div></div>
+        <div>
+          <h3>Engineer, Marine Sales</h3>
+          <ul>
+            <li>Technical sales and project support for Caterpillar marine propulsion engines, generator sets and gearboxes</li>
+            <li>Prepared technical and commercial documents for government tenders that led to successful bids</li>
+            <li>Coordinated procurement, shipment tracking, pre-delivery inspection, installation and commissioning</li>
+            <li>Supported on-site teams through commissioning, troubleshooting and customer acceptance</li>
+          </ul>
+        </div>
+      </li>
+      <li class="job">
+        <div><div class="when">Nov 2016 to Apr 2017</div><div class="org">Bangla Trac Limited (BanglaCAT)</div><div class="loc">Dhaka, Bangladesh</div></div>
+        <div>
+          <h3>CRM Intern</h3>
+          <ul>
+            <li>Market research on the LPG sector around Mongla Port that guided sales forecasting, staffing and budgets</li>
+          </ul>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="block" id="projects" aria-labelledby="proj-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">02 · Projects</span>
+      <div>
+        <h2 id="proj-h">Projects</h2>
+        <p>Tools built around the person at work. Each one starts from a human factors problem.</p>
+      </div>
+    </div>
+
+    <!-- Check-Mate -->
+    <article class="feature" id="check-mate">
+      <div class="feature-top">
+        <div class="feature-text">
+          <span class="mono" style="color:var(--muted)">Project Lead · INEN 6301 UX with AI · 2026</span>
+          <h3>Check-Mate</h3>
+          <p class="lead">A mobile app that suggests a short break when your fatigue checks say you need one, then measures whether the break helped.</p>
+          <div class="tags"><span class="tag">Adaptive micro-breaks</span><span class="tag">Reaction-time test</span><span class="tag">Mobile web app</span><span class="tag">User testing</span></div>
+          <div class="links">
+            <a class="btn primary" href="https://check-mate-app.pages.dev/" target="_blank" rel="noopener">Open the app</a>
+            <a class="btn" href="https://check-mate-app.pages.dev/walkthrough/" target="_blank" rel="noopener">Step-by-step walkthrough</a>
+          </div>
+        </div>
+        <div class="media" data-youtube="Wy_d-HKLfkk" data-poster="assets/check-mate-video.jpg" aria-label="Check-Mate app walkthrough video">
+          <div class="ph"><span class="play" aria-hidden="true"></span><strong>Video demo coming soon</strong><span>A two-minute tour of the app from sign-up to break history.</span></div>
+        </div>
+      </div>
+      <details class="case">
+        <summary>Read the case study</summary>
+        <div class="case-body">
+          <div>
+            <h4>The problem</h4>
+            <p>Fixed break schedules ignore how tired a person actually is. People either break too late, after errors creep in, or break when they don't need to and lose time.</p>
+          </div>
+          <div>
+            <h4>How it works</h4>
+            <ul>
+              <li><strong>Set up.</strong> Create an account and pick favourite break activities</li>
+              <li><strong>Quick check.</strong> A sleepiness rating plus a reaction-time test</li>
+              <li><strong>Break.</strong> One short activity of up to 10 minutes, matched to fatigue risk</li>
+              <li><strong>Recover.</strong> Rate how you feel and retest, so recovery is measured</li>
+            </ul>
+          </div>
+          <div>
+            <h4>My role</h4>
+            <ul>
+              <li>Led the team through the literature review and the study methodology</li>
+              <li>Designed and built the user interface with teammate Nirman</li>
+              <li>Leading the final stages of development and preparing the user experiments</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Why it matters</h4>
+            <p>It turns microbreak research into something a worker can use on their phone. Every check and break is logged and can be exported as CSV, so the data feeds straight into analysis.</p>
+          </div>
+        </div>
+      </details>
+    </article>
+
+    <!-- TaktArm Twin -->
+    <article class="feature" id="taktarm-twin">
+      <div class="feature-top">
+        <div class="feature-text">
+          <span class="mono" style="color:var(--muted)">AI and Software, Dr. James Curry · Oct to Nov 2026</span>
+          <h3>TaktArm Twin</h3>
+          <p class="lead">A digital twin of the lab's UR10e robot arm. You tell it the job in plain English, see the motion previewed in 3D, and approve it before the robot moves.</p>
+          <div class="tags"><span class="tag">UR10e digital twin</span><span class="tag">Cycle time</span><span class="tag">Local LLM</span><span class="tag">Human in the loop</span></div>
+          <div class="links">
+            <a class="btn" href="#taktarm-case" onclick="document.getElementById('taktarm-case').open=true">Read the case study</a>
+          </div>
+        </div>
+        <div class="media" data-youtube="" aria-label="TaktArm Twin video demo">
+          <div class="ph"><span class="play" aria-hidden="true"></span><strong>Video demo coming soon</strong><span>One command, from typing to approval to robot motion.</span></div>
+        </div>
+      </div>
+      <details class="case" id="taktarm-case">
+        <summary>Read the case study</summary>
+        <div class="case-body">
+          <div>
+            <h4>The problem</h4>
+            <p>Programming a cobot for each new task is slow, and operators often cannot see what the robot will do before it moves.</p>
+          </div>
+          <div>
+            <h4>What I built</h4>
+            <ul>
+              <li>Plain-language commands read by an offline language model</li>
+              <li>A preview arm that shows the plan before anything moves</li>
+              <li>The fastest process within the 1000 mm/s safety limit, with the time it saves</li>
+              <li>Charts comparing cycle time, energy and peak power across speeds</li>
+              <li>Payload checks against the 12.5 kg limit and bin fit checks</li>
+            </ul>
+          </div>
+          <div class="full">
+            <h4>Results in simulation</h4>
+            <div class="result-row">
+              <div class="result"><div class="num">37 to 40%</div><div class="lbl">shorter predicted cycle time</div></div>
+              <div class="result"><div class="num">65.8 s → 39.5 s</div><div class="lbl">six-object batch</div></div>
+              <div class="result"><div class="num">≈ ⅓</div><div class="lbl">less predicted energy per cycle</div></div>
+            </div>
+            <p class="note" style="margin-top:10px">These are twin predictions. They will be checked against measurements on the real robot.</p>
+          </div>
+          <div>
+            <h4>Human factors angle</h4>
+            <p>The operator stays in control, because no motion runs without approval. A planned user study will measure workload (NASA-TLX), trust and usability (SUS).</p>
+          </div>
+          <div>
+            <h4>Built with</h4>
+            <p>Python, FastAPI, Qwen 2.5 3B through Ollama, Three.js with the official UR10e model, NumPy and OpenCV. About 9,700 lines of code and 83 automated tests. Hardware is a UR10e with a Robotiq Hand-E gripper and wrist camera.</p>
+          </div>
+        </div>
+      </details>
+    </article>
+
+    <!-- 5S Analyzer -->
+    <article class="feature" id="5s-analyzer">
+      <div class="feature-top">
+        <div class="feature-text">
+          <span class="mono" style="color:var(--muted)">Workplace safety · 2026</span>
+          <h3>5S Analyzer for Workplace Safety</h3>
+          <p class="lead">An AI system that checks live CCTV and uploaded photos for 5S and safety problems across six industries, then scores and reports them.</p>
+          <div class="tags"><span class="tag">Computer vision</span><span class="tag">5S audits</span><span class="tag">Severity scoring</span><span class="tag">React</span></div>
+          <ul style="margin:4px 0 0;padding-left:1.1em">
+            <li>Configurable severity scoring for each violation</li>
+            <li>Daily, monthly and yearly reports with trends, exported to Excel and Word</li>
+            <li>Role-based access, live camera monitoring and violation tracking</li>
+          </ul>
+        </div>
+        <div class="media" data-youtube="" aria-label="5S Analyzer video demo">
+          <div class="ph"><span class="play" aria-hidden="true"></span><strong>Video demo coming soon</strong><span>A walkthrough of a live 5S audit.</span></div>
+        </div>
+      </div>
+    </article>
+
+    <div class="cards">
+      <article class="card">
+        <span class="kind">Research tool · Guide</span>
+        <h3>Garmin Forerunner 55 Participant Guide</h3>
+        <p>A screen-by-screen guide that helps study participants set up their watch and export their wellness data as CSV files.</p>
+        <div class="links"><a href="https://sheikhfuzael.github.io/garmin-forerunner55-guide/" target="_blank" rel="noopener">Open the guide</a></div>
+      </article>
+      <article class="card">
+        <span class="kind">Research tool · Guide</span>
+        <h3>Garmin Timestamp Conversion Guide</h3>
+        <p>A click-by-click Excel tutorial that turns Garmin timestamp_16 values into readable UTC times, with an example workbook.</p>
+        <div class="links"><a href="https://sheikhfuzael.github.io/garmin-timestamp-guide/" target="_blank" rel="noopener">Open the guide</a></div>
+      </article>
+      <article class="card">
+        <span class="kind">Product design · 2024</span>
+        <h3>Rotary Tabletop for Wrist and Forearm Ergonomics</h3>
+        <p>An adjustable tabletop with a rotary positioner to reduce strain during keyboard use. Top 10 finalist at the 2024 Cardinal Ideas Pitch.</p>
+      </article>
+      <article class="card">
+        <span class="kind">Optimisation · Python</span>
+        <h3>Vehicle Routing with a Driver Fatigue Model</h3>
+        <p>A multi-objective routing tool built with OR-Tools and NSGA-II that balances delivery cost against driver fatigue.</p>
+      </article>
+      <article class="card">
+        <span class="kind">Scheduling · Python</span>
+        <h3>Permutation Flow Shop Scheduling</h3>
+        <p>A PuLP and CBC model that studies the trade-off between tardiness and schedule nervousness.</p>
+      </article>
+      <article class="card">
+        <span class="kind">Experiment · 2025</span>
+        <h3>Keyboard Slope and Wrist Support Study</h3>
+        <p>A 2×2 factorial experiment on keyboard slope and wrist support height, analysed with ANOVA and Tukey post-hoc tests. Published at AHFE 2025.</p>
+        <div class="links"><a href="https://doi.org/10.54941/ahfe1006472" target="_blank" rel="noopener">Read the paper</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section class="block" id="research" aria-labelledby="res-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">03 · Research</span>
+      <div>
+        <h2 id="res-h">Research</h2>
+        <p>Human Factors and Ergonomics Laboratory, Lamar University, advised by Dr. Yueqing Li.</p>
+      </div>
+    </div>
+
+    <div class="research-now">
+      <span class="mono" style="color:var(--muted)">Current doctoral research</span>
+      <h3>AI-adaptive microbreak scheduling based on fatigue modelling</h3>
+      <p>Long work sessions build up physical and mental fatigue, and that is when errors and strain injuries happen. I am using wearable data, such as heart rate variability and stress scores from Garmin watches, with machine learning to estimate fatigue and schedule short breaks before performance drops.</p>
+      <p>The goal is simple. Detect the early signs, step in early, and keep people safe without slowing the work down.</p>
+    </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <h3>ASPIRE 2026, 70th HFES Annual Meeting</h3>
+        <p>Attended to meet researchers, learn about current work in human factors and get a clearer view of where the field is heading.</p>
+      </div>
+      <div class="panel">
+        <h3>Research pipeline</h3>
+        <p>Upcoming studies and papers will be listed here.</p>
+      </div>
+    </div>
+
+    <h3 class="sub-head" id="publications">Publications</h3>
+    <ol class="pubs">
+      <li class="pub">
+        <span class="yr">2026</span>
+        <div>
+          <h3><a href="https://doi.org/10.1002/bse.71686" target="_blank" rel="noopener">Smart Industry and Ecological Sustainability: Industry 4.0 Technologies, Renewables, and the US Production Ecological Footprint</a> <span class="status ok">Published</span></h3>
+          <p class="authors"><strong>Rahman, S. F.</strong>, Rohan, S. I., Rashed, M., and Vasa, L.</p>
+          <p class="venue">Business Strategy and the Environment, e71686</p>
+        </div>
+      </li>
+      <li class="pub">
+        <span class="yr">2026</span>
+        <div>
+          <h3><a href="https://doi.org/10.54941/ahfe1007975" target="_blank" rel="noopener">Enhancing Learning Efficiency and Ergonomic Well-Being: A Comparative Study of Handwritten, AI-Assisted, and Digital Structured Note-Taking</a> <span class="status ok">Published</span></h3>
+          <p class="venue">AHFE International Conference on Human Factors and Systems Interaction, Istanbul · Vol. 230, pp. 39 to 48</p>
+        </div>
+      </li>
+      <li class="pub">
+        <span class="yr">2026</span>
+        <div>
+          <h3>Ecological Modernization and Sustainability: Industrial Growth, Renewable Energy, and the Load Capacity Factor <span class="status">Accepted</span></h3>
+          <p class="venue">Emerging Science Journal</p>
+        </div>
+      </li>
+      <li class="pub">
+        <span class="yr">2025</span>
+        <div>
+          <h3><a href="https://doi.org/10.54941/ahfe1006472" target="_blank" rel="noopener">Influence of Computer Keyboard Slope and Wrist Support Height on Users' Discomfort</a> <span class="status ok">Published</span></h3>
+          <p class="venue">AHFE International Conference on Physical Ergonomics and Human Factors, Orlando · Vol. 185, pp. 122 to 130</p>
+        </div>
+      </li>
+      <li class="pub">
+        <span class="yr">2018</span>
+        <div>
+          <h3><a href="http://dx.doi.org/10.14299/ijser.2018.03.03" target="_blank" rel="noopener">Comparison of Heat Transfer Through a Circular Pipe Using Different Geometry Inside the Pipe</a> <span class="status ok">Published</span></h3>
+          <p class="venue">International Journal of Scientific and Engineering Research · Vol. 9, Issue 3, pp. 81 to 89</p>
+        </div>
+      </li>
+    </ol>
+    <p style="margin-top:16px;color:var(--muted)">Full list on <a href="https://scholar.google.com/citations?user=crvmv2EAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a> and <a href="https://www.researchgate.net/profile/Sheikh-Fuzael-Rahman" target="_blank" rel="noopener">ResearchGate</a>.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="block" id="about" aria-labelledby="about-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">04 · About</span>
+      <div><h2 id="about-h">About</h2></div>
+    </div>
+
+    <div class="about-stack">
+      <ol class="story">
+        <li>
+          <h3>Six years in industry</h3>
+          <p>Marine engines at BanglaCAT, construction machinery at Energypac and industrial gases at Linde. Large portfolios, revenue targets met, safety training run on site.</p>
+        </li>
+        <li>
+          <h3>What I noticed</h3>
+          <p>The machines were well engineered. The people running them were not well supported. Errors came from fatigue, overload and poor design, not lack of skill.</p>
+        </li>
+        <li>
+          <h3>Building the tools</h3>
+          <p>An MEng in Industrial Engineering with a 4.00 CGPA, published work in ergonomics and sustainability, and now a Doctor of Engineering on wearable fatigue monitoring.</p>
+        </li>
+        <li>
+          <h3>What I bring</h3>
+          <p>Plant-floor experience plus data, ergonomics and AI skills, used to reduce injury risk and lift performance.</p>
+        </li>
+      </ol>
+
+      <div class="body-grid">
+        <h3 class="mono" style="color:var(--muted);font-weight:400">Education</h3>
+        <ul class="edu">
+          <li><strong>Doctor of Engineering, Industrial Engineering</strong><span class="where">Lamar University, Beaumont, Texas</span><span class="when">2026 to present</span></li>
+          <li><strong>Master of Engineering, Industrial Engineering</strong><span class="where">Lamar University, Beaumont, Texas · CGPA 4.00</span><span class="when">2023 to 2024</span></li>
+          <li><strong>BSc, Mechanical Engineering</strong><span class="where">Ahsanullah University of Science and Technology, Dhaka</span><span class="when">2012 to 2016</span></li>
+        </ul>
+      </div>
+
+      <div class="body-grid">
+        <h3 class="mono" style="color:var(--muted);font-weight:400">Skills</h3>
+        <div class="skills">
+          <div><h4>Human factors</h4><p>Ergonomic assessment, experimental design, ANOVA, Tukey post-hoc, NASA-TLX, SUS</p></div>
+          <div><h4>Process improvement</h4><p>Lean Six Sigma, Kaizen, DMAIC, 5S, root cause analysis, PFMEA, CAPA, time study</p></div>
+          <div><h4>Programming and data</h4><p>Python, SQL, MATLAB, C++, Minitab, Excel macros</p></div>
+          <div><h4>Robotics and digital twins</h4><p>UR10e, ur_rtde, Three.js, local language models with Ollama</p></div>
+          <div><h4>CAD and simulation</h4><p>SolidWorks, Fusion 360, AutoCAD, ANSYS</p></div>
+          <div><h4>Business and enterprise</h4><p>SAP ERP, demand forecasting, inventory planning, cost-benefit and ROI analysis</p></div>
+        </div>
+      </div>
+
+      <div class="body-grid">
+        <h3 class="mono" style="color:var(--muted);font-weight:400">Training and memberships</h3>
+        <div class="skills">
+          <div><h4>Training</h4><p>Google Machine Learning Crash Course · CISA Industrial Control Systems Cybersecurity 201 and 202 · CESER CyberStrike · Flowserve Chemical Process Pump Repair · Linde APAC Sales Training</p></div>
+          <div><h4>Memberships</h4><p>Institute of Industrial and Systems Engineers (IISE), student member · Applied Ergonomics Society (AES), student member</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="block contact" id="contact" aria-labelledby="contact-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">05 · Contact</span>
+      <div>
+        <h2 id="contact-h">Let's talk</h2>
+        <p>Open to roles in human factors, ergonomics, EHS, manufacturing and process improvement.</p>
+      </div>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <span class="k">Email</span>
+        <a class="v" href="mailto:sheikh.fuzael.rahman@outlook.com">sheikh.fuzael.rahman@outlook.com</a>
+        <button class="copy-btn" type="button" id="copy-email">Copy email</button>
+      </div>
+      <a href="https://www.linkedin.com/in/sheikh-fuzael-rahman/" target="_blank" rel="noopener"><span class="k">LinkedIn</span><span class="v">in/sheikh-fuzael-rahman</span></a>
+      <a href="https://scholar.google.com/citations?user=crvmv2EAAAAJ&amp;hl=en" target="_blank" rel="noopener"><span class="k">Google Scholar</span><span class="v">Publications and citations</span></a>
+      <a href="https://github.com/sheikhfuzael" target="_blank" rel="noopener"><span class="k">GitHub</span><span class="v">github.com/sheikhfuzael</span></a>
+      <a href="https://www.researchgate.net/profile/Sheikh-Fuzael-Rahman" target="_blank" rel="noopener"><span class="k">ResearchGate</span><span class="v">Sheikh-Fuzael-Rahman</span></a>
+      <a href="https://orcid.org/0009-0001-3189-9069" target="_blank" rel="noopener"><span class="k">ORCID</span><span class="v">0009-0001-3189-9069</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Sheikh Fuzael Rahman · Beaumont, Texas</span>
+    <a href="#top">Back to top</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Mobile menu
+  var btn = document.getElementById('menu-btn');
+  var nav = document.getElementById('site-nav');
+  btn.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') { nav.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+  });
+
+  // Highlight the section in view
+  var links = nav.querySelectorAll('a[href^="#"]');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          links.forEach(function (l) { l.setAttribute('aria-current', l.getAttribute('href') === '#' + en.target.id ? 'true' : 'false'); });
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    ['experience', 'projects', 'research', 'about', 'contact'].forEach(function (id) {
+      var el = document.getElementById(id); if (el) io.observe(el);
+    });
+  }
+
+  // Copy email
+  var copy = document.getElementById('copy-email');
+  copy.addEventListener('click', function () {
+    var email = 'sheikh.fuzael.rahman@outlook.com';
+    try {
+      navigator.clipboard.writeText(email).then(function () { copy.textContent = 'Copied'; }, function () { copy.textContent = email; });
+    } catch (e) { copy.textContent = email; }
+    setTimeout(function () { copy.textContent = 'Copy email'; }, 2500);
+  });
+
+  // Video embeds. Add a YouTube video ID to data-youtube on any .media block to show the video.
+  // The poster loads first. Clicking it plays the video on the page, or opens YouTube if embedding is blocked.
+  var framed = false;
+  try { framed = window.self !== window.top; } catch (e) { framed = true; }
+  document.querySelectorAll('.media[data-youtube]').forEach(function (box) {
+    var id = box.getAttribute('data-youtube');
+    if (!id) return;
+    var label = box.getAttribute('aria-label') || 'Video';
+    var url = 'https://youtu.be/' + encodeURIComponent(id);
+    var a = document.createElement('a');
+    a.className = 'poster';
+    a.href = url;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.setAttribute('aria-label', 'Play ' + label);
+    var poster = box.getAttribute('data-poster');
+    if (poster) { var img = document.createElement('img'); img.src = poster; img.alt = ''; a.appendChild(img); }
+    var p = document.createElement('span'); p.className = 'play'; p.setAttribute('aria-hidden', 'true'); a.appendChild(p);
+    a.addEventListener('click', function (e) {
+      if (framed) return;
+      e.preventDefault();
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&rel=0';
+      f.title = label;
+      f.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+      f.allowFullscreen = true;
+      box.innerHTML = '';
+      box.appendChild(f);
+    });
+    box.innerHTML = '';
+    box.classList.add('has-video');
+    box.appendChild(a);
+  });
+
+  // Open a case study when linked directly
+  function openFromHash() {
+    var t = location.hash && document.getElementById(location.hash.slice(1));
+    if (t && t.tagName === 'DETAILS') t.open = true;
+  }
+  window.addEventListener('hashchange', openFromHash);
+  openFromHash();
+})();
+</script>
+</body>
+</html>
