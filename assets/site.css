@@ -318,3 +318,7 @@ footer a { color: inherit; }
 footer a:hover { color: var(--accent); }
 .toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: var(--ink); color: var(--paper); padding: 10px 16px; border-radius: var(--radius); font-size: 0.92rem; opacity: 0; pointer-events: none; transition: opacity 0.2s; z-index: 80; }
 .toast.show { opacity: 1; }
+
+.details-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; font-weight: 600; font-size: 0.92rem; }
+.details-link::after { content: "\2192"; transition: transform 0.15s; }
+.details-link:hover::after { transform: translateX(3px); }
