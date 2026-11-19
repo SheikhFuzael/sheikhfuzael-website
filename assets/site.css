@@ -322,3 +322,6 @@ footer a:hover { color: var(--accent); }
 .details-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; font-weight: 600; font-size: 0.92rem; }
 .details-link::after { content: "\2192"; transition: transform 0.15s; }
 .details-link:hover::after { transform: translateX(3px); }
+
+.focus { list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.focus li { font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent); background: var(--accent-soft); border-radius: 4px; padding: 5px 10px; }
