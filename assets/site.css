@@ -286,7 +286,7 @@ section.block + section.block { border-top: 1px solid var(--line); }
 .btn-row { display: flex; flex-wrap: wrap; gap: 10px; }
 .btn.small { padding: 9px 16px; font-size: 0.92rem; cursor: pointer; font-family: inherit; }
 .cv-card { border: 1px solid var(--line); border-left: 4px solid var(--hivis); border-radius: var(--radius); padding: 24px 28px; background: var(--surface); }
-.cv-card h3 { font-size: 1.3rem; margin: 6px 0 8px; }
+.cv-card h3 { font-size: 1.3rem; margin: 6px 0 16px; }
 .cv-card p { color: var(--muted); margin-bottom: 16px; max-width: 34em; }
 .facts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 .facts li { border-top: 1px solid var(--line); padding-top: 10px; }
