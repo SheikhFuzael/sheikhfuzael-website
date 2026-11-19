@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects | Sheikh Fuzael Rahman</title>
+<meta name="description" content="Projects by Sheikh Fuzael Rahman, including Check-Mate, TaktArm Twin and the 5S Analyzer for workplace safety.">
+<meta property="og:title" content="Sheikh Fuzael Rahman | Industrial Engineer, Human Factors and Ergonomics">
+<meta property="og:description" content="Six years in industry. Now building tools that keep people safe and productive at work.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@87,500;87,600;87,700&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Sheikh Fuzael Rahman, home"><span class="brand-mark" aria-hidden="true"></span>Sheikh Fuzael Rahman</a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="experience.html">Experience</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="research.html">Research</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html#request-cv" class="nav-cta">Request CV</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- PROJECTS -->
+<section class="block page-intro" id="projects" aria-labelledby="proj-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">Projects</span>
+      <div>
+        <h1 id="proj-h" style="font-size:clamp(2rem,4vw,2.8rem)">Projects</h1>
+        <p>Tools built around the person at work. Each one starts from a human factors problem.</p>
+      </div>
+    </div>
+
+    <!-- Check-Mate -->
+    <article class="feature" id="check-mate">
+      <div class="feature-top">
+        <div class="feature-text">
+          <span class="mono" style="color:var(--muted)">Project Lead · INEN 6301 UX with AI · 2026</span>
+          <h3>Check-Mate</h3>
+          <p class="lead">A mobile app that suggests a short break when your fatigue checks say you need one, then measures whether the break helped.</p>
+          <div class="tags"><span class="tag">Adaptive micro-breaks</span><span class="tag">Reaction-time test</span><span class="tag">Mobile web app</span><span class="tag">User testing</span></div>
+          <div class="links">
+            <a class="btn primary" href="https://check-mate-app.pages.dev/" target="_blank" rel="noopener">Open the app</a>
+            <a class="btn" href="https://check-mate-app.pages.dev/walkthrough/" target="_blank" rel="noopener">Step-by-step walkthrough</a>
+          </div>
+        </div>
+        <div class="media" data-youtube="Wy_d-HKLfkk" data-poster="assets/check-mate-video.jpg" aria-label="Check-Mate app walkthrough video">
+          <div class="ph"><span class="play" aria-hidden="true"></span><strong>Video demo coming soon</strong><span>A two-minute tour of the app from sign-up to break history.</span></div>
+        </div>
+      </div>
+      <details class="case">
+        <summary>Read the case study</summary>
+        <div class="case-body">
+          <div>
+            <h4>The problem</h4>
+            <p>Fixed break schedules ignore how tired a person actually is. People either break too late, after errors creep in, or break when they don't need to and lose time.</p>
+          </div>
+          <div>
+            <h4>How it works</h4>
+            <ul>
+              <li><strong>Set up.</strong> Create an account and pick favourite break activities</li>
+              <li><strong>Quick check.</strong> A sleepiness rating plus a reaction-time test</li>
+              <li><strong>Break.</strong> One short activity of up to 10 minutes, matched to fatigue risk</li>
+              <li><strong>Recover.</strong> Rate how you feel and retest, so recovery is measured</li>
+            </ul>
+          </div>
+          <div>
+            <h4>My role</h4>
+            <ul>
+              <li>Led the team through the literature review and the study methodology</li>
+              <li>Designed and built the user interface with teammate Nirman</li>
+              <li>Leading the final stages of development and preparing the user experiments</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Why it matters</h4>
+            <p>It turns microbreak research into something a worker can use on their phone. Every check and break is logged and can be exported as CSV, so the data feeds straight into analysis.</p>
+          </div>
+        </div>
+      </details>
+    </article>
+
+    <!-- TaktArm Twin -->
+    <article class="feature" id="taktarm-twin">
+      <div class="feature-top">
+        <div class="feature-text">
+          <span class="mono" style="color:var(--muted)">AI and Software, Dr. James Curry · Oct to Nov 2026</span>
+          <h3>TaktArm Twin</h3>
+          <p class="lead">A digital twin of the lab's UR10e robot arm. You tell it the job in plain English, see the motion previewed in 3D, and approve it before the robot moves.</p>
+          <div class="tags"><span class="tag">UR10e digital twin</span><span class="tag">Cycle time</span><span class="tag">Local LLM</span><span class="tag">Human in the loop</span></div>
+          <div class="links">
+            <a class="btn" href="#taktarm-case" onclick="document.getElementById('taktarm-case').open=true">Read the case study</a>
+          </div>
+        </div>
+        <div class="media" data-youtube="" aria-label="TaktArm Twin video demo">
+          <div class="ph"><span class="play" aria-hidden="true"></span><strong>Video demo coming soon</strong><span>One command, from typing to approval to robot motion.</span></div>
+        </div>
+      </div>
+      <details class="case" id="taktarm-case">
+        <summary>Read the case study</summary>
+        <div class="case-body">
+          <div>
+            <h4>The problem</h4>
+            <p>Programming a cobot for each new task is slow, and operators often cannot see what the robot will do before it moves.</p>
+          </div>
+          <div>
+            <h4>What I built</h4>
+            <ul>
+              <li>Plain-language commands read by an offline language model</li>
+              <li>A preview arm that shows the plan before anything moves</li>
+              <li>The fastest process within the 1000 mm/s safety limit, with the time it saves</li>
+              <li>Charts comparing cycle time, energy and peak power across speeds</li>
+              <li>Payload checks against the 12.5 kg limit and bin fit checks</li>
+            </ul>
+          </div>
+          <div class="full">
+            <h4>Results in simulation</h4>
+            <div class="result-row">
+              <div class="result"><div class="num">37 to 40%</div><div class="lbl">shorter predicted cycle time</div></div>
+              <div class="result"><div class="num">65.8 s → 39.5 s</div><div class="lbl">six-object batch</div></div>
+              <div class="result"><div class="num">≈ ⅓</div><div class="lbl">less predicted energy per cycle</div></div>
+            </div>
+            <p class="note" style="margin-top:10px">These are twin predictions. They will be checked against measurements on the real robot.</p>
+          </div>
+          <div>
+            <h4>Human factors angle</h4>
+            <p>The operator stays in control, because no motion runs without approval. A planned user study will measure workload (NASA-TLX), trust and usability (SUS).</p>
+          </div>
+          <div>
+            <h4>Built with</h4>
+            <p>Python, FastAPI, Qwen 2.5 3B through Ollama, Three.js with the official UR10e model, NumPy and OpenCV. About 9,700 lines of code and 83 automated tests. Hardware is a UR10e with a Robotiq Hand-E gripper and wrist camera.</p>
+          </div>
+        </div>
+      </details>
+    </article>
+
+    <!-- 5S Analyzer -->
+    <article class="feature" id="5s-analyzer">
+      <div class="feature-top">
+        <div class="feature-text">
+          <span class="mono" style="color:var(--muted)">Workplace safety · 2026</span>
+          <h3>5S Analyzer for Workplace Safety</h3>
+          <p class="lead">An AI system that checks live CCTV and uploaded photos for 5S and safety problems across six industries, then scores and reports them.</p>
+          <div class="tags"><span class="tag">Computer vision</span><span class="tag">5S audits</span><span class="tag">Severity scoring</span><span class="tag">React</span></div>
+          <ul style="margin:4px 0 0;padding-left:1.1em">
+            <li>Configurable severity scoring for each violation</li>
+            <li>Daily, monthly and yearly reports with trends, exported to Excel and Word</li>
+            <li>Role-based access, live camera monitoring and violation tracking</li>
+          </ul>
+        </div>
+        <div class="media" data-youtube="" aria-label="5S Analyzer video demo">
+          <div class="ph"><span class="play" aria-hidden="true"></span><strong>Video demo coming soon</strong><span>A walkthrough of a live 5S audit.</span></div>
+        </div>
+      </div>
+    </article>
+
+    <div class="cards">
+      <article class="card">
+        <span class="kind">Research tool · Guide</span>
+        <h3>Garmin Forerunner 55 Participant Guide</h3>
+        <p>A screen-by-screen guide that helps study participants set up their watch and export their wellness data as CSV files.</p>
+        <div class="links"><a href="https://sheikhfuzael.github.io/garmin-forerunner55-guide/" target="_blank" rel="noopener">Open the guide</a></div>
+      </article>
+      <article class="card">
+        <span class="kind">Research tool · Guide</span>
+        <h3>Garmin Timestamp Conversion Guide</h3>
+        <p>A click-by-click Excel tutorial that turns Garmin timestamp_16 values into readable UTC times, with an example workbook.</p>
+        <div class="links"><a href="https://sheikhfuzael.github.io/garmin-timestamp-guide/" target="_blank" rel="noopener">Open the guide</a></div>
+      </article>
+      <article class="card">
+        <span class="kind">Product design · 2024</span>
+        <h3>Rotary Tabletop for Wrist and Forearm Ergonomics</h3>
+        <p>An adjustable tabletop with a rotary positioner to reduce strain during keyboard use. Top 10 finalist at the 2024 Cardinal Ideas Pitch.</p>
+      </article>
+      <article class="card">
+        <span class="kind">Optimisation · Python</span>
+        <h3>Vehicle Routing with a Driver Fatigue Model</h3>
+        <p>A multi-objective routing tool built with OR-Tools and NSGA-II that balances delivery cost against driver fatigue.</p>
+      </article>
+      <article class="card">
+        <span class="kind">Scheduling · Python</span>
+        <h3>Permutation Flow Shop Scheduling</h3>
+        <p>A PuLP and CBC model that studies the trade-off between tardiness and schedule nervousness.</p>
+      </article>
+      <article class="card">
+        <span class="kind">Experiment · 2025</span>
+        <h3>Keyboard Slope and Wrist Support Study</h3>
+        <p>A 2×2 factorial experiment on keyboard slope and wrist support height, analysed with ANOVA and Tukey post-hoc tests. Published at AHFE 2025.</p>
+        <div class="links"><a href="https://doi.org/10.54941/ahfe1006472" target="_blank" rel="noopener">Read the paper</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<section class="cta-band" aria-label="Get in touch">
+  <div class="wrap">
+    <div>
+      <h2>Interested in working together?</h2>
+      <p>Request my CV or send me a note. I usually reply within two working days.</p>
+    </div>
+    <div class="btn-row">
+      <a class="btn primary" href="mailto:sheikh.fuzael.rahman@outlook.com?subject=CV%20request%20for%20Sheikh%20Fuzael%20Rahman&amp;body=Hello%20Sheikh%2C%0A%0AI%20came%20across%20your%20website%20and%20would%20like%20to%20request%20a%20copy%20of%20your%20CV.%0A%0AName%3A%0AOrganisation%3A%0ARole%20or%20opportunity%3A%0A%0AThank%20you.">Request CV</a>
+      <a class="btn" href="contact.html">Contact details</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <span>© 2026 Sheikh Fuzael Rahman · Beaumont, Texas</span>
+    <nav aria-label="Footer">
+      <a href="index.html">Home</a><a href="experience.html">Experience</a><a href="projects.html">Projects</a><a href="research.html">Research</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="assets/site.js"></script>
+</body>
+</html>
